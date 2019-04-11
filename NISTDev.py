@@ -12,15 +12,27 @@ def decomperIO(uu,vv,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed):
 def bmempty(sx,sy):
     return np.zeros((sx,sy,3),'uint8')
 
+def bmfull(sx,sy):
+    return np.ones((sx,sy,3),'uint8')*255
+
 def bminsert(bm2,ox,oy,bm1):
-    bm3 = np.copy(bm1)
+    bm3 = np.copy(bm2)
     bm3[ox:ox+bm1.shape[0],oy:oy+bm1.shape[1],:] = bm1
     return bm3
 
 def bmmax(bm2,ox,oy,bm1):
-    bm3 = np.copy(bm1)
+    bm3 = np.copy(bm2)
     bm3[ox:ox+bm1.shape[0],oy:oy+bm1.shape[1],:] = np.maximum(bm1,bm2[ox:ox+bm1.shape[0],oy:oy+bm1.shape[1],:])
     return bm3
+
+def bmborder(b,bm):
+    return bminsert(bmfull(b*2+bm.shape[0],b*2+bm.shape[1]),b,b,bm)
+
+def bmhstack(ll):
+    return np.hstack(ll)
+
+def bmvstack(ll):
+    return np.vstack(ll)
 
 def bmwrite(file,bm):
     Image.fromarray(bm).save(file)
