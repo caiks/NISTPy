@@ -1,4 +1,4 @@
-﻿from AlignmentDevRepa import *
+from AlignmentDevRepa import *
 from PIL import Image
 import gzip
 import struct
@@ -8,6 +8,9 @@ def aahr(uu,aa):
 
 def decomperIO(uu,vv,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed):
     return parametersSystemsHistoryRepasDecomperMaxRollByMExcludedSelfHighestFmaxIORepa(wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed,uu,vv,hr)
+
+def qqhr(uu,vv,qq):
+    return aahr(uu,single(llss([(v, ValInt(1)) for v in qq] + [(v, ValInt(0)) for v in (vv-qq)]),1))
 
 def bmempty(sx,sy):
     return np.zeros((sx,sy,3),'uint8')
@@ -37,7 +40,7 @@ def bmvstack(ll):
 def bmwrite(file,bm):
     Image.fromarray(bm).save(file)
 
-def hrbm(a,b,c,q,d,hr):
+def hrbm(b,c,d,hr):
     z = hrsize(hr)
     (_,_,_,rr) = hr
     ar1 = np.sum(rr,axis=1)
@@ -46,8 +49,8 @@ def hrbm(a,b,c,q,d,hr):
     ar4 = np.transpose(np.reshape(ar3[:,:,np.newaxis]*([1]*c),[b,b*c]))
     ar5 = np.transpose(np.reshape(ar4[:,:,np.newaxis]*([1]*c),[b*c,b*c]))
     bm1 = (ar5[:,:,np.newaxis]*([1]*3)).astype(dtype='uint8')
-    bm2 = bmempty(a,a)
-    return bminsert(bm2,q,q,bm1)
+    bm2 = bmempty(b*c,b*c)
+    return bminsert(bm2,0,0,bm1)
 
 # nistTrainBucketedIO :: Int -> IO (System, HistoryRepa)
 
@@ -63,7 +66,7 @@ def nistTrainBucketedIO(d):
     _ = f.read(8)
     l = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z,1])
     h = np.concatenate((np.transpose(l),np.transpose(r)))
-    uu = lluu([(VarStr("digit"),[ValInt(i) for i in range(9)])] + [(VarPair((VarInt(x), VarInt(y))), [ValInt(i) for i in range(d)]) for x in range(1,rows+1) for y in range(1,cols+1)])
+    uu = lluu([(VarStr("digit"),[ValInt(i) for i in range(10)])] + [(VarPair((VarInt(x), VarInt(y))), [ValInt(i) for i in range(d)]) for x in range(1,rows+1) for y in range(1,cols+1)])
     vv = list(uvars(uu))
     mvv = sdict([(v,i) for (i,v) in enumerate(vv)])
     mm = sdict([(v,sdict([(w,i) for (i,w) in enumerate(uvals(uu,v))])) for v in vv])
@@ -94,7 +97,7 @@ def nistTrainBucketedRectangleRandomIO(d,bx,by,s):
     _ = f.read(8)
     l = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z,1])
     h = np.concatenate((np.transpose(l),np.transpose(r)))
-    uu = lluu([(VarStr("digit"),[ValInt(i) for i in range(9)])] + [(VarPair((VarInt(x), VarInt(y))), [ValInt(i) for i in range(d)]) for x in range(1,bx+1) for y in range(1,by+1)])
+    uu = lluu([(VarStr("digit"),[ValInt(i) for i in range(10)])] + [(VarPair((VarInt(x), VarInt(y))), [ValInt(i) for i in range(d)]) for x in range(1,bx+1) for y in range(1,by+1)])
     vv = list(uvars(uu))
     mvv = sdict([(v,i) for (i,v) in enumerate(vv)])
     mm = sdict([(v,sdict([(w,i) for (i,w) in enumerate(uvals(uu,v))])) for v in vv])
@@ -133,5 +136,3 @@ def nistTestBucketedIO(d):
 
 def nistTestIO():
     return nistTestBucketedIO(256)
-
-
