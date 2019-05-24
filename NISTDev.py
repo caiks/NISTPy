@@ -52,6 +52,30 @@ def hrbm(b,c,d,hr):
     bm2 = bmempty(b*c,b*c)
     return bminsert(bm2,0,0,bm1)
 
+def hrbmrow(b,c,d,hr):
+    z = hrsize(hr)
+    (_,_,_,rr) = hr
+    ar1 = np.sum(rr,axis=1)
+    ar2 = ar1 * 255 // (d-1) // z
+    ar3 = ar2.reshape([1,b])
+    ar4 = np.transpose(np.reshape(ar3[:,:,np.newaxis]*([1]*1),[1,b*1]))
+    ar5 = np.transpose(np.reshape(ar4[:,:,np.newaxis]*([1]*c),[b*1,1*c]))
+    bm1 = (ar5[:,:,np.newaxis]*([1]*3)).astype(dtype='uint8')
+    bm2 = bmempty(b*1,b*1)
+    return bminsert(bm2,(b-c)//2,0,bm1)
+
+def hrbmcol(b,c,d,hr):
+    z = hrsize(hr)
+    (_,_,_,rr) = hr
+    ar1 = np.sum(rr,axis=1)
+    ar2 = ar1 * 255 // (d-1) // z
+    ar3 = ar2.reshape([b,1])
+    ar4 = np.transpose(np.reshape(ar3[:,:,np.newaxis]*([1]*c),[b,1*c]))
+    ar5 = np.transpose(np.reshape(ar4[:,:,np.newaxis]*([1]*1),[1*c,b*1]))
+    bm1 = (ar5[:,:,np.newaxis]*([1]*3)).astype(dtype='uint8')
+    bm2 = bmempty(b*1,b*1)
+    return bminsert(bm2,0,(b-c)//2,bm1)
+
 # nistTrainBucketedIO :: Int -> IO (System, HistoryRepa)
 
 def nistTrainBucketedIO(d):
@@ -90,8 +114,14 @@ def nistTrainBucketedRectangleRandomIO(d,bx,by,s):
     p = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z,rows,cols])
     r = p * d // 256
     np.random.seed(s)
-    vrx = np.random.randint(0,rows-bx,z)
-    vry = np.random.randint(0,cols-by,z)
+    if rows-bx > 0:
+        vrx = np.random.randint(0,rows-bx,z)
+    else:
+        vrx = np.zeros(z,dtype=np.int)
+    if cols-by > 0:
+        vry = np.random.randint(0,cols-by,z)
+    else:
+        vry = np.zeros(z,dtype=np.int)
     r = np.concatenate([r[i:i+1,vrx[i]:vrx[i]+bx,vry[i]:vry[i]+by] for i in range(z)]).reshape([z,bx*by])
     f = gzip.open('train-labels-idx1-ubyte.gz','rb')
     _ = f.read(8)
