@@ -167,4 +167,6 @@ def nistTestBucketedIO(d):
 def nistTestIO():
     return nistTestBucketedIO(256)
 
+def dfIO(f):
+    return persistentsDecompFud_u(json.load(open(f, 'r')))
 
