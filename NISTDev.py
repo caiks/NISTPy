@@ -1,4 +1,4 @@
-from AlignmentDevRepa import *
+﻿from AlignmentDevRepa import *
 from PIL import Image
 import gzip
 import struct
@@ -9,8 +9,8 @@ def aahr(uu,aa):
 def decomperIO(uu,vv,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed):
     return parametersSystemsHistoryRepasDecomperMaxRollByMExcludedSelfHighestFmaxIORepa(wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed,uu,vv,hr)
 
-def qqhr(uu,vv,qq):
-    return aahr(uu,single(llss([(v, ValInt(1)) for v in qq] + [(v, ValInt(0)) for v in (vv-qq)]),1))
+def qqhr(d,uu,vv,qq):
+    return aahr(uu,single(llss([(v, ValInt(d-1)) for v in qq] + [(v, ValInt(0)) for v in (vv-qq)]),1))
 
 def bmempty(sx,sy):
     return np.zeros((sx,sy,3),'uint8')
@@ -166,3 +166,5 @@ def nistTestBucketedIO(d):
 
 def nistTestIO():
     return nistTestBucketedIO(256)
+
+
