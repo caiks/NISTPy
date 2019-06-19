@@ -28,6 +28,11 @@ def bmmax(bm2,ox,oy,bm1):
     bm3[ox:ox+bm1.shape[0],oy:oy+bm1.shape[1],:] = np.maximum(bm1,bm2[ox:ox+bm1.shape[0],oy:oy+bm1.shape[1],:])
     return bm3
 
+def bmmin(bm2,ox,oy,bm1):
+    bm3 = np.copy(bm2)
+    bm3[ox:ox+bm1.shape[0],oy:oy+bm1.shape[1],:] = np.minimum(bm1,bm2[ox:ox+bm1.shape[0],oy:oy+bm1.shape[1],:])
+    return bm3
+
 def bmborder(b,bm):
     return bminsert(bmfull(b*2+bm.shape[0],b*2+bm.shape[1]),b,b,bm)
 
@@ -75,6 +80,30 @@ def hrbmcol(b,c,d,hr):
     bm1 = (ar5[:,:,np.newaxis]*([1]*3)).astype(dtype='uint8')
     bm2 = bmempty(b*1,b*1)
     return bminsert(bm2,0,(b-c)//2,bm1)
+
+# nistTrainBucketedAveragedIO :: Int -> Int -> Int -> IO (System, HistoryRepa)
+
+def nistTrainBucketedAveragedIO(d,b,q):
+    def lluu(ll):
+        return listsSystem([(v,sset(ww)) for (v,ww) in ll])
+    uvals = systemsVarsSetValue
+    f = gzip.open('train-images-idx3-ubyte.gz','rb')
+    _, z, rows, cols = struct.unpack(">IIII", f.read(16))
+    p = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z*rows*cols])
+    c = rows // b
+    ii = np.fromfunction(lambda u, x1, x2, x3: u*rows*cols + (x1*c+q+(x3//c))*cols + x2*c+q+(x3%c), (z,b,b,c*c), dtype=int)
+    r = np.sum(p[ii],axis=-1).reshape([z,b*b]) * d // (c*c*256)
+    f = gzip.open('train-labels-idx1-ubyte.gz','rb')
+    _ = f.read(8)
+    l = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z,1])
+    h = np.concatenate((np.transpose(l),np.transpose(r)))
+    uu = lluu([(VarStr("digit"),[ValInt(i) for i in range(10)])] + [(VarPair((VarInt(x), VarInt(y))), [ValInt(i) for i in range(d)]) for x in range(1,b+1) for y in range(1,b+1)])
+    vv = list(uvars(uu))
+    mvv = sdict([(v,i) for (i,v) in enumerate(vv)])
+    mm = sdict([(v,sdict([(w,i) for (i,w) in enumerate(uvals(uu,v))])) for v in vv])
+    sh = tuple([len(mm[v]) for v in vv])
+    hr = (vv,mvv,sh,h)
+    return (uu,hr)
 
 # nistTrainBucketedIO :: Int -> IO (System, HistoryRepa)
 
