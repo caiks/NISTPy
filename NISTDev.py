@@ -6,6 +6,18 @@ import struct
 def aahr(uu,aa):
     return hhhr(uu,aahh(aa))
 
+def hrlent(uu,hh,ww,vvl):
+    def red(aa,vv):
+        return setVarsHistoryRepasCountApproxs(vv,aa)
+    z = historyRepasSize(hh)
+    def ent(xx):
+        t = 0
+        for i in xx:
+            a = i/z
+            t += a * log(a)
+        return - t
+    return ent(red(hh,ww|vvl)) - ent(red(hh,ww))
+
 def decomperIO(uu,vv,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed):
     return parametersSystemsHistoryRepasDecomperMaxRollByMExcludedSelfHighestFmaxIORepa(wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed,uu,vv,hr)
 
