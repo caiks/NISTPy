@@ -93,6 +93,25 @@ def hrbmcol(b,c,d,hr):
     bm2 = bmempty(b*1,b*1)
     return bminsert(bm2,0,(b-c)//2,bm1)
 
+def ppbm(uu,vvk,b,c,d,pp):
+    kk = []
+    for ll in pp:
+        jj = []
+        for ((_,ff),hrs) in ll:
+            jj.append(bmborder(1,bmmax(hrbm(b,c,d,hrhrred(hrs,vvk)),0,0,hrbm(b,c,d,qqhr(d,uu,vvk,fund(ff))))))
+        kk.append(bminsert(bmempty((b*c)+2,((b*c)+2)*max([len(ii) for ii in pp])),0,0,bmhstack(jj)))
+    return bmvstack(kk)
+
+def ppbm2(uu,vvk,b,c,d,pp):
+    kk = []
+    for ll in pp:
+        jj = []
+        for ((_,ff),hrs) in ll:
+            jj.append(bmborder(1,hrbm(b,c,d,hrhrred(hrs,vvk))))
+        kk.append(bminsert(bmempty((b*c)+2,((b*c)+2)*max([len(ii) for ii in pp])),0,0,bmhstack(jj)))
+    return bmvstack(kk)
+
+
 # nistTrainBucketedAveragedIO :: Int -> Int -> Int -> IO (System, HistoryRepa)
 
 def nistTrainBucketedAveragedIO(d,b,q):
