@@ -37,9 +37,8 @@ def tframe(f,tt):
 def fframe(f,ff):
     return qqff([tframe(f,tt) for tt in ffqq(ff)])
 
-# TBD
-def decomperIO(uu,vv,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed):
-    return parametersSystemsHistoryRepasDecomperMaxRollByMExcludedSelfHighestFmaxIORepa(wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed,uu,vv,hr)
+def decomperIO(uu,ff,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed):
+    return parametersSystemsHistoryRepasDecomperLevelMaxRollByMExcludedSelfHighestFmaxIORepa(wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed,uu,sdict([((wmax,sset(),ff),emptyTree())]),hr)
 
 if __name__ == '__main__':
     t1 = timer()
@@ -84,8 +83,7 @@ if __name__ == '__main__':
     (wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed) = (2**11, 8, 2**10, 30, (30*3), 3, 2**8, 1, 127, 1, 5)
 
     print(">>> %s" % model)
-    # TBD
-    (uu2,df2) = decomperIO(uu,vvk,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed)
+    (uu2,df2) = decomperIO(uu,gg1,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed)
     open(model+".json","w").write(decompFudsPersistentsEncode(decompFudsPersistent(df2)))
     print("<<< done %s" % model)
     stdout.flush()
