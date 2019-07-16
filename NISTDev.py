@@ -123,7 +123,7 @@ def nistTrainBucketedAveragedIO(d,b,q):
     p = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z*rows*cols])
     c = rows // b
     ii = np.fromfunction(lambda u, x1, x2, x3: u*rows*cols + (x1*c+q+(x3//c))*cols + x2*c+q+(x3%c), (z,b,b,c*c), dtype=int)
-    r = np.sum(p[ii],axis=-1).reshape([z,b*b]) * d // (c*c*256)
+    r = np.sum(p[ii],axis=-1).reshape([z,b*b]).astype(dtype='int32') * d // (c*c*256)
     f = gzip.open('train-labels-idx1-ubyte.gz','rb')
     _ = f.read(8)
     l = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z,1])
