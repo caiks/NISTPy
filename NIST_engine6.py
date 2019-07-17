@@ -3,7 +3,6 @@
 from NISTDev import *
 from timeit import default_timer as timer
 from sys import stdout
-import psutil
 
 if __name__ == '__main__':
     t1 = timer()
@@ -47,5 +46,5 @@ if __name__ == '__main__':
     bmwrite(model+"_2.bmp",ppbm(uu,vvk,10,2*2,2,pp))
 
     t2 = timer()
-    print("<<< done %ds %dMB" % (t2-t1, psutil.Process().memory_info().peak_wset // 10**6))
+    print("<<< done %ds" % t2-t1)
     stdout.flush()

@@ -3,7 +3,6 @@
 from NISTDev import *
 from timeit import default_timer as timer
 from sys import stdout
-import psutil
 
 if __name__ == '__main__':
     t1 = timer()
@@ -43,6 +42,8 @@ if __name__ == '__main__':
     print("train size: %d" % hrsize(hr1))
     stdout.flush()
 
+    uu1 = uunion(uu,fsys(dfff(df1)))
+
     (a,ad) = summation(mult,seed,uu1,df1,hr1)
     print("alignment: %.2f" % a)
     print("alignment density: %.2f" % ad)
@@ -54,5 +55,5 @@ if __name__ == '__main__':
     bmwrite(model+"_2.bmp",ppbm(uu,vvk,11,2*2,2,pp))
 
     t2 = timer()
-    print("<<< done %ds %dMB" % (t2-t1, psutil.Process().memory_info().peak_wset // 10**6))
+    print("<<< done %ds" % t2-t1)
     stdout.flush()
