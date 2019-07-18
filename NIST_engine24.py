@@ -23,7 +23,7 @@ def refr2(x,y):
         if isinstance(v, VarPair):
             (i,j) = v._rep
             if isinstance(i, VarInt) and isinstance(j, VarInt):
-                return VarPair((VarInt((x-1)+i),VarInt((y-1)+j)))
+                return VarPair((VarInt((x-1)+i._rep),VarInt((y-1)+j._rep)))
         return v
     return refr2_f
 
@@ -82,7 +82,7 @@ if __name__ == '__main__':
     (wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed) = (2**11, 8, 2**10, 30, (30*3), 3, 2**8, 1, 127, 1, 5)
 
     print(">>> %s" % model)
-    (uu2,df2) = decomperIO(uu,gg1,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed)
+    (uu2,df2) = decomperIO(uu1,gg1,hr,wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed)
     open(model+".json","w").write(decompFudsPersistentsEncode(decompFudsPersistent(df2)))
     print("<<< done %s" % model)
     stdout.flush()
