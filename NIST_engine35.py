@@ -46,5 +46,5 @@ if __name__ == '__main__':
     bmwrite(model+"_2.bmp",ppbm(uu,vvk,28,2,2,pp))
 
     t2 = timer()
-    print("<<< done %ds" % t2-t1)
+    print("<<< done %.3fs" % (t2-t1))
     stdout.flush()
