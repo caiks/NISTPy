@@ -4,6 +4,20 @@ from NISTDev import *
 from timeit import default_timer as timer
 from sys import stdout
 
+def fudsSystemImplied(ff):
+    vars = histogramsSetVar
+    uu = sdict()
+    for (aa,_) in ff:
+        for v in vars(aa):
+            ww = sset([ss[v] for ss in aa.keys()])
+            if v in uu:
+                uu[v] |= ww
+            else:
+                uu[v] = ww
+    return uu
+
+fsys = fudsSystemImplied
+
 def refr1(k):
     def refr1_f(v):
         if isinstance(v, VarPair):
