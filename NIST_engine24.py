@@ -20,13 +20,11 @@ def refr1(k):
 
 def refr2(x,y):
     def refr2_f(v):
-        if isinstance(v, VarPair):
+        if isinstance(v, VarPair) and isinstance(v._rep[0], VarInt) and isinstance(v._rep[1], VarInt):
             (i,j) = v._rep
-            if isinstance(i, VarInt) and isinstance(j, VarInt):
-                return VarPair((VarInt((x-1)+i._rep),VarInt((y-1)+j._rep)))
-        return v
+            return VarPair((VarInt((x-1)+i._rep),VarInt((y-1)+j._rep)))
+        return VarPair(v,VarStr("(" + str(x) + ";" + str(y) + ")"))
     return refr2_f
-
 
 def tframe(f,tt):
     reframe = transformsMapVarsFrame
