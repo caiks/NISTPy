@@ -23,7 +23,7 @@ def refr2(x,y):
         if isinstance(v, VarPair) and isinstance(v._rep[0], VarInt) and isinstance(v._rep[1], VarInt):
             (i,j) = v._rep
             return VarPair((VarInt((x-1)+i._rep),VarInt((y-1)+j._rep)))
-        return VarPair(v,VarStr("(" + str(x) + ";" + str(y) + ")"))
+        return VarPair((v,VarStr("(" + str(x) + ";" + str(y) + ")")))
     return refr2_f
 
 def tframe(f,tt):
