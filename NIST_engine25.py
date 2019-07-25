@@ -42,12 +42,12 @@ if __name__ == '__main__':
     print(">>>")
     stdout.flush()
 
-    (uu,hr) = nistTrainBucketedRegionRandomIO(2,10,17)
+    (uu,hr) = nistTrainBucketedRegionRandomIO(2,15,17)
 
     print("train size: %d" % hrsize(hr))
     stdout.flush()
 
-    df1 = dfIO('./NIST_model6.json')
+    df1 = dfIO('./NIST_model21.json')
 
     uu1 = uunion(uu,fsys(dfff(df1)))
 
@@ -64,8 +64,8 @@ if __name__ == '__main__':
     vvk = vv - vvl
 
     gg1 = sset()
-    for x in [2,6,10,14,18]:
-        for y in [2,6,10,14,18]:
+    for x in [1,4,7,10,13]:
+        for y in [1,4,7,10,13]:
             gg1 |= fframe(refr2(x,y),ff1)
 
     print("underlying level cardinality: %d" % len(fvars(gg1)))
@@ -76,7 +76,7 @@ if __name__ == '__main__':
     print("underlying level sys cardinality: %d" % len(uvars(uu1)))
     stdout.flush()
 
-    model = "NIST_model24"
+    model = "NIST_model25"
     (wmax,lmax,xmax,omax,bmax,mmax,umax,pmax,fmax,mult,seed) = (2**11, 8, 2**10, 30, (30*3), 3, 2**8, 1, 127, 1, 5)
 
     print(">>> %s" % model)
