@@ -35,13 +35,17 @@ if __name__ == '__main__':
     stdout.flush()
 
     valency = int(argv[1])
-    modelin = argv[2]
-    kmax = int(argv[3])
-    omax = int(argv[4])
-    fmax = int(argv[5])
-    model = argv[6]
+    breadth = int(argv[2])
+    offset = int(argv[3])
+    modelin = argv[4]
+    kmax = int(argv[5])
+    omax = int(argv[6])
+    fmax = int(argv[7])
+    model = argv[8]
 
     print("valency: %d" % valency)
+    print("breadth: %d" % breadth)
+    print("offset: %d" % offset)
     print("model in: %s" % modelin)
     print("model out: %s" % model)
     print("kmax: %d" % kmax)
@@ -49,7 +53,7 @@ if __name__ == '__main__':
     print("fmax: %d" % fmax)
     stdout.flush()
 
-    (uu,hr) = nistTrainBucketedIO(valency)
+    (uu,hr) = nistTrainBucketedAveragedIO(valency,breadth,offset)
 
     print("train size: %d" % hrsize(hr))
     stdout.flush()
@@ -94,9 +98,9 @@ if __name__ == '__main__':
     stdout.flush()
 
     pp = treesPaths(hrmult(uu2,df21,hr1))
-    bmwrite(model+".bmp",ppbm2(uu,vvk,28,1,valency,pp))
-    bmwrite(model+"_1.bmp",ppbm(uu,vvk,28,1,valency,pp))
-    bmwrite(model+"_2.bmp",ppbm(uu,vvk,28,2,valency,pp))
+    bmwrite(model+".bmp",ppbm2(uu,vvk,breadth,3,valency,pp))
+    bmwrite(model+"_1.bmp",ppbm(uu,vvk,breadth,3,valency,pp))
+    bmwrite(model+"_2.bmp",ppbm(uu,vvk,breadth,3*2,valency,pp))
 
     t2 = timer()
     print("<<< done %.3fs" % (t2-t1))
