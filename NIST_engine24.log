@@ -83,3 +83,16 @@ level substrate cardinality: 0
 level fud derived cardinality: 3150
 fud cardinality: 0
 level excluded fud cardinality: 0
+tuple cardinality: 30
+max tuple algn: 1008.95
+tupler	searched: 4557721	rate: 6310.11
+<<< tupler 722.289s
+>>> parter
+partitions cardinality: 60
+parter	searched: 10710	rate: 9743.63
+<<< parter 1.099s
+>>> roller
+roll cardinality: 60
+roller	searched: 1374615	rate: 2886984.14
+<<< roller 0.476s
+>>> application
