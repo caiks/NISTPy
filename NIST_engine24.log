@@ -6,9 +6,9 @@ underlying level sys cardinality: 23485
 >>> decomper
 >>> repa shuffle
 >>> NIST_model24
-<<< repa shuffle 1.469s
+<<< repa shuffle 1.601s
 >>> repa perimeters
-<<< repa perimeters 7349.643s
+<<< repa perimeters 278.083s
 >>> layerer
 >>> layer	fud: 1	level node: 1	layer: 1
 >>> tupler
@@ -18,24 +18,24 @@ fud cardinality: 0
 level excluded fud cardinality: 0
 tuple cardinality: 30
 max tuple algn: -28735.85
-tupler	searched: 4949390	rate: 3230.79
-<<< tupler 1531.943s
+tupler	searched: 4949390	rate: 3057.88
+<<< tupler 1618.571s
 >>> parter
 partitions cardinality: 60
-parter	searched: 10710	rate: 9810.01
-<<< parter 1.092s
+parter	searched: 10710	rate: 8596.64
+<<< parter 1.246s
 >>> roller
 roll cardinality: 60
-roller	searched: 1961273	rate: 3514295.68
-<<< roller 0.558s
+roller	searched: 1961273	rate: 3329630.73
+<<< roller 0.589s
 >>> application
 fud cardinality: 558
-<<< application 3253.107s
+<<< application 202.858s
 >>> dervarser
 der vars algn density: 125541.68
-dervarser	searched: 29134	rate: 1404.03
-<<< dervarser 20.750s
-<<< layer 4807.450s
+dervarser	searched: 29134	rate: 1226.74
+<<< dervarser 23.749s
+<<< layer 1847.013s
 >>> layer	fud: 1	level node: 1	layer: 2
 >>> tupler
 level substrate cardinality: 0
@@ -44,38 +44,38 @@ fud cardinality: 558
 level excluded fud cardinality: 111
 tuple cardinality: 30
 max tuple algn: -70970.26
-tupler	searched: 630558	rate: 2730.27
-<<< tupler 230.950s
+tupler	searched: 630558	rate: 2562.04
+<<< tupler 246.115s
 >>> parter
 partitions cardinality: 60
-parter	searched: 1200	rate: 9576.11
-<<< parter 0.125s
+parter	searched: 1200	rate: 7961.18
+<<< parter 0.151s
 >>> roller
 roll cardinality: 60
-roller	searched: 12931332	rate: 7398518.73
-<<< roller 1.748s
+roller	searched: 12931332	rate: 7004170.29
+<<< roller 1.846s
 >>> application
 fud cardinality: 637
-<<< application 226.926s
+<<< application 206.123s
 >>> dervarser
 der vars algn density: 113242.11
-dervarser	searched: 58310	rate: 1726.84
-<<< dervarser 33.767s
-<<< layer 493.516s
-<<< layerer 5300.970s
+dervarser	searched: 58310	rate: 1515.47
+<<< dervarser 38.476s
+<<< layer 492.712s
+<<< layerer 2339.729s
 >>> slicing
 dependent fud cardinality : 215
 derived cardinality : 7
-<<< slicing 37.185s
+<<< slicing 2.821s
 >>> slice selection
 slices: 7
 decomp path length: 1
 slice size: 29957
-<<< slice selection 2.185s
+<<< slice selection 2.367s
 >>> repa shuffle
-<<< repa shuffle 0.661s
+<<< repa shuffle 0.771s
 >>> repa perimeters
-<<< repa perimeters 3559.509s
+<<< repa perimeters 146.207s
 >>> layerer
 >>> layer	fud: 2	level node: 1	layer: 1
 >>> tupler
@@ -85,24 +85,24 @@ fud cardinality: 0
 level excluded fud cardinality: 0
 tuple cardinality: 30
 max tuple algn: 1008.95
-tupler	searched: 4557721	rate: 6305.69
-<<< tupler 722.795s
+tupler	searched: 4557721	rate: 5968.44
+<<< tupler 763.637s
 >>> parter
 partitions cardinality: 60
-parter	searched: 10710	rate: 9796.71
-<<< parter 1.093s
+parter	searched: 10710	rate: 8541.64
+<<< parter 1.254s
 >>> roller
 roll cardinality: 60
-roller	searched: 1374615	rate: 2897401.12
-<<< roller 0.474s
+roller	searched: 1374615	rate: 2747136.52
+<<< roller 0.500s
 >>> application
 fud cardinality: 378
-<<< application 1407.421s
+<<< application 98.130s
 >>> dervarser
 der vars algn density: 88030.80
-dervarser	searched: 35330	rate: 1993.50
-<<< dervarser 17.723s
-<<< layer 2149.506s
+dervarser	searched: 35330	rate: 1749.45
+<<< dervarser 20.195s
+<<< layer 883.715s
 >>> layer	fud: 2	level node: 1	layer: 2
 >>> tupler
 level substrate cardinality: 0
@@ -111,24 +111,24 @@ fud cardinality: 378
 level excluded fud cardinality: 101
 tuple cardinality: 30
 max tuple algn: -26191.24
-tupler	searched: 663142	rate: 4418.73
-<<< tupler 150.075s
+tupler	searched: 663142	rate: 4140.42
+<<< tupler 160.163s
 >>> parter
 partitions cardinality: 60
-parter	searched: 3630	rate: 10657.62
-<<< parter 0.341s
+parter	searched: 3630	rate: 9084.40
+<<< parter 0.400s
 >>> roller
 roll cardinality: 60
-roller	searched: 28760050	rate: 9513988.57
-<<< roller 3.023s
+roller	searched: 28760050	rate: 9007387.37
+<<< roller 3.193s
 >>> application
 fud cardinality: 442
-<<< application 117.811s
+<<< application 104.536s
 >>> dervarser
 der vars algn density: 94091.91
-dervarser	searched: 66226	rate: 2200.89
-<<< dervarser 30.091s
-<<< layer 301.340s
+dervarser	searched: 66226	rate: 1946.64
+<<< dervarser 34.021s
+<<< layer 302.312s
 >>> layer	fud: 2	level node: 1	layer: 3
 >>> tupler
 level substrate cardinality: 0
@@ -137,38 +137,38 @@ fud cardinality: 442
 level excluded fud cardinality: 165
 tuple cardinality: 30
 max tuple algn: -31597.87
-tupler	searched: 845916	rate: 4832.35
-<<< tupler 175.053s
+tupler	searched: 845916	rate: 4522.38
+<<< tupler 187.051s
 >>> parter
 partitions cardinality: 60
-parter	searched: 3630	rate: 10493.22
-<<< parter 0.346s
+parter	searched: 3630	rate: 8975.15
+<<< parter 0.404s
 >>> roller
 roll cardinality: 60
-roller	searched: 5921910	rate: 4998127.93
-<<< roller 1.185s
+roller	searched: 5921910	rate: 4731170.53
+<<< roller 1.252s
 >>> application
 fud cardinality: 506
-<<< application 117.149s
+<<< application 107.176s
 >>> dervarser
 der vars algn density: 94091.91
-dervarser	searched: 106696	rate: 2430.83
-<<< dervarser 43.893s
-<<< layer 337.625s
-<<< layerer 2788.478s
+dervarser	searched: 106696	rate: 2149.88
+<<< dervarser 49.629s
+<<< layer 345.512s
+<<< layerer 1531.546s
 >>> slicing
 dependent fud cardinality : 94
 derived cardinality : 2
-<<< slicing 9.609s
+<<< slicing 2.471s
 >>> slice selection
 slices: 8
 decomp path length: 2
 slice size: 18195
-<<< slice selection 1.958s
+<<< slice selection 2.138s
 >>> repa shuffle
-<<< repa shuffle 0.415s
+<<< repa shuffle 0.489s
 >>> repa perimeters
-<<< repa perimeters 2197.619s
+<<< repa perimeters 102.994s
 >>> layerer
 >>> layer	fud: 3	level node: 1	layer: 1
 >>> tupler
@@ -178,293 +178,14 @@ fud cardinality: 0
 level excluded fud cardinality: 0
 tuple cardinality: 30
 max tuple algn: -6306.55
-tupler	searched: 4199331	rate: 10018.64
-<<< tupler 419.152s
+tupler	searched: 4199331	rate: 9468.51
+<<< tupler 443.505s
 >>> parter
 partitions cardinality: 60
-parter	searched: 10710	rate: 9955.71
-<<< parter 1.076s
+parter	searched: 10710	rate: 8631.44
+<<< parter 1.241s
 >>> roller
 roll cardinality: 60
-roller	searched: 1342777	rate: 2958312.34
-<<< roller 0.454s
->>> application
-fud cardinality: 307
-<<< application 1025.402s
->>> dervarser
-der vars algn density: 50637.79
-dervarser	searched: 36540	rate: 2391.00
-<<< dervarser 15.282s
-<<< layer 1461.365s
->>> layer	fud: 3	level node: 1	layer: 2
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 307
-level excluded fud cardinality: 105
-tuple cardinality: 30
-max tuple algn: -16742.15
-tupler	searched: 565095	rate: 6379.17
-<<< tupler 88.584s
->>> parter
-partitions cardinality: 60
-parter	searched: 3510	rate: 9850.15
-<<< parter 0.356s
->>> roller
-roll cardinality: 60
-roller	searched: 2615970	rate: 5547109.99
-<<< roller 0.472s
->>> application
-fud cardinality: 372
-<<< application 82.614s
->>> dervarser
-der vars algn density: 51739.78
-dervarser	searched: 65047	rate: 2623.46
-<<< dervarser 24.794s
-<<< layer 196.821s
->>> layer	fud: 3	level node: 1	layer: 3
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 372
-level excluded fud cardinality: 170
-tuple cardinality: 30
-max tuple algn: -16751.18
-tupler	searched: 668220	rate: 6884.16
-<<< tupler 97.066s
->>> parter
-partitions cardinality: 60
-parter	searched: 3510	rate: 10064.22
-<<< parter 0.349s
->>> roller
-roll cardinality: 60
-roller	searched: 1035685	rate: 2677261.39
-<<< roller 0.387s
->>> application
-fud cardinality: 417
-<<< application 74.304s
->>> dervarser
-der vars algn density: 53011.68
-dervarser	searched: 87474	rate: 2795.81
-<<< dervarser 31.288s
-<<< layer 203.393s
->>> layer	fud: 3	level node: 1	layer: 4
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 417
-level excluded fud cardinality: 215
-tuple cardinality: 30
-max tuple algn: -14574.13
-tupler	searched: 874240	rate: 7147.18
-<<< tupler 122.320s
->>> parter
-partitions cardinality: 60
-parter	searched: 3630	rate: 10560.08
-<<< parter 0.344s
->>> roller
-roll cardinality: 60
-roller	searched: 621690	rate: 1934040.31
-<<< roller 0.321s
->>> application
-fud cardinality: 478
-<<< application 77.227s
->>> dervarser
-der vars algn density: 53011.68
-dervarser	searched: 126083	rate: 3007.07
-<<< dervarser 41.929s
-<<< layer 242.140s
-<<< layerer 2103.732s
->>> slicing
-dependent fud cardinality : 143
-derived cardinality : 4
-<<< slicing 9.018s
->>> slice selection
-slices: 11
-decomp path length: 2
-slice size: 11762
-<<< slice selection 1.941s
->>> repa shuffle
-<<< repa shuffle 0.276s
->>> repa perimeters
-<<< repa perimeters 1447.259s
->>> layerer
->>> layer	fud: 4	level node: 1	layer: 1
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 0
-level excluded fud cardinality: 0
-tuple cardinality: 30
-max tuple algn: -268.54
-tupler	searched: 4089987	rate: 14820.03
-<<< tupler 275.977s
->>> parter
-partitions cardinality: 60
-parter	searched: 10710	rate: 9931.52
-<<< parter 1.078s
->>> roller
-roll cardinality: 60
-roller	searched: 1713463	rate: 3005077.86
-<<< roller 0.570s
->>> application
-fud cardinality: 438
-<<< application 1798.907s
->>> dervarser
-der vars algn density: 33566.01
-dervarser	searched: 34980	rate: 2834.60
-<<< dervarser 12.340s
-<<< layer 2088.873s
->>> layer	fud: 4	level node: 1	layer: 2
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 438
-level excluded fud cardinality: 100
-tuple cardinality: 30
-max tuple algn: 15678.82
-tupler	searched: 624940	rate: 7980.75
-<<< tupler 78.306s
->>> parter
-partitions cardinality: 60
-parter	searched: 3630	rate: 10580.92
-<<< parter 0.343s
->>> roller
-roll cardinality: 60
-roller	searched: 61924264	rate: 11008174.78
-<<< roller 5.625s
->>> application
-fud cardinality: 483
-<<< application 84.443s
->>> dervarser
-der vars algn density: 29475.91
-dervarser	searched: 54933	rate: 3261.77
-<<< dervarser 16.841s
-<<< layer 185.559s
-<<< layerer 2274.436s
->>> slicing
-dependent fud cardinality : 162
-derived cardinality : 3
-<<< slicing 7.402s
->>> slice selection
-slices: 13
-decomp path length: 1
-slice size: 11387
-<<< slice selection 2.144s
->>> repa shuffle
-<<< repa shuffle 0.269s
->>> repa perimeters
-<<< repa perimeters 1398.610s
->>> layerer
->>> layer	fud: 5	level node: 1	layer: 1
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 0
-level excluded fud cardinality: 0
-tuple cardinality: 30
-max tuple algn: -7262.68
-tupler	searched: 3908908	rate: 15053.61
-<<< tupler 259.666s
->>> parter
-partitions cardinality: 60
-parter	searched: 10710	rate: 9882.37
-<<< parter 1.084s
->>> roller
-roll cardinality: 60
-roller	searched: 3144945	rate: 5192407.65
-<<< roller 0.606s
->>> application
-fud cardinality: 366
-<<< application 1468.987s
->>> dervarser
-der vars algn density: 23242.40
-dervarser	searched: 30617	rate: 2796.37
-<<< dervarser 10.949s
-<<< layer 1741.291s
->>> layer	fud: 5	level node: 1	layer: 2
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 366
-level excluded fud cardinality: 111
-tuple cardinality: 30
-max tuple algn: -9814.30
-tupler	searched: 643959	rate: 8226.10
-<<< tupler 78.282s
->>> parter
-partitions cardinality: 60
-parter	searched: 3630	rate: 10506.81
-<<< parter 0.345s
->>> roller
-roll cardinality: 60
-roller	searched: 2163018	rate: 5950347.36
-<<< roller 0.364s
->>> application
-fud cardinality: 435
-<<< application 54.531s
->>> dervarser
-der vars algn density: 34610.12
-dervarser	searched: 74000	rate: 3696.42
-<<< dervarser 20.019s
-<<< layer 153.541s
->>> layer	fud: 5	level node: 1	layer: 3
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 435
-level excluded fud cardinality: 180
-tuple cardinality: 30
-max tuple algn: -9754.60
-tupler	searched: 814230	rate: 9320.99
-<<< tupler 87.354s
->>> parter
-partitions cardinality: 60
-parter	searched: 3630	rate: 10346.00
-<<< parter 0.351s
->>> roller
-roll cardinality: 60
-roller	searched: 2646786	rate: 6091082.13
-<<< roller 0.435s
->>> application
-fud cardinality: 509
-<<< application 56.043s
->>> dervarser
-der vars algn density: 34610.12
-dervarser	searched: 123765	rate: 4367.32
-<<< dervarser 28.339s
-<<< layer 172.522s
-<<< layerer 2067.361s
->>> slicing
-dependent fud cardinality : 104
-derived cardinality : 2
-<<< slicing 5.256s
->>> slice selection
-slices: 14
-decomp path length: 1
-slice size: 10409
-<<< slice selection 2.155s
->>> repa shuffle
-<<< repa shuffle 0.255s
->>> repa perimeters
-<<< repa perimeters 1258.314s
->>> layerer
->>> layer	fud: 6	level node: 1	layer: 1
->>> tupler
-level substrate cardinality: 0
-level fud derived cardinality: 3150
-fud cardinality: 0
-level excluded fud cardinality: 0
-tuple cardinality: 30
-max tuple algn: 2615.71
-tupler	searched: 2849685	rate: 15510.78
-<<< tupler 183.723s
->>> parter
-partitions cardinality: 60
-parter	searched: 3630	rate: 9936.25
-<<< parter 0.365s
->>> roller
-roll cardinality: 60
-roller	searched: 943092	rate: 1782685.88
-<<< roller 0.529s
+roller	searched: 1342777	rate: 2786950.14
+<<< roller 0.482s
 >>> application
