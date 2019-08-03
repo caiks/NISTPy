@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
     uu1 = uunion(uu,fsys(dfff(df1)))
 
-    ff1 = fframe(refr1(3),dfnul(uu1,dflt(df1,ufmax),3)))
+    ff1 = fframe(refr1(3),dfnul(uu1,dflt(df1,ufmax),3))
 
     print("region model cardinality: %d" % len(fvars(dfff(df1))))
     stdout.flush()
