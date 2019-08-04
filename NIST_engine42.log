@@ -1,0 +1,39 @@
+>>>
+valency: 2
+model in: NIST_model26
+model out: NIST_model42
+kmax: 1
+omax: 5
+fmax: 127
+train size: 60000
+model cardinality: 5671
+underlying level sys cardinality: 7618
+underlying level size: 60000
+>>> NIST_model42
+<<< done NIST_model42
+model cardinality: 772
+train size: 7500
+<<< done 10298.696s
+	Command being timed: "python3 NIST_engine_cond.py 2 NIST_model26 1 5 127 NIST_model42"
+	User time (seconds): 10313.58
+	System time (seconds): 10.52
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:52:04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 16430672
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 45
+	Minor (reclaiming a frame) page faults: 1455860
+	Voluntary context switches: 88
+	Involuntary context switches: 99478
+	Swaps: 0
+	File system inputs: 3240
+	File system outputs: 16728
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
