@@ -222,6 +222,32 @@ def nistTestBucketedIO(d):
     hr = (vv,mvv,sh,h)
     return (uu,hr)
 
+# nistTestBucketedAveragedIO :: Int -> Int -> Int -> IO (System, HistoryRepa)
+
+def nistTestBucketedAveragedIO(d,b,q):
+    def lluu(ll):
+        return listsSystem([(v,sset(ww)) for (v,ww) in ll])
+    uvals = systemsVarsSetValue
+    f = gzip.open('t10k-images-idx3-ubyte.gz','rb')
+    _, z, rows, cols = struct.unpack(">IIII", f.read(16))
+    p = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z*rows*cols])
+    c = rows // b
+    ii = np.fromfunction(lambda u, x1, x2, x3: u*rows*cols + (x1*c+q+(x3//c))*cols + x2*c+q+(x3%c), (z,b,b,c*c), dtype=int)
+    r = np.sum(p[ii],axis=-1).reshape([z,b*b]).astype(dtype='int32') * d // (c*c*256)
+    f = gzip.open('t10k-labels-idx1-ubyte.gz','rb')
+    _ = f.read(8)
+    l = np.frombuffer(f.read(),np.dtype('ubyte')).astype(dtype='int32').reshape([z,1])
+    h = np.concatenate((np.transpose(l),np.transpose(r)))
+    uu = lluu([(VarStr("digit"),[ValInt(i) for i in range(10)])] + [(VarPair((VarInt(x), VarInt(y))), [ValInt(i) for i in range(d)]) for x in range(1,b+1) for y in range(1,b+1)])
+    vv = list(uvars(uu))
+    mvv = sdict([(v,i) for (i,v) in enumerate(vv)])
+    mm = sdict([(v,sdict([(w,i) for (i,w) in enumerate(uvals(uu,v))])) for v in vv])
+    sh = tuple([len(mm[v]) for v in vv])
+    hr = (vv,mvv,sh,h)
+    return (uu,hr)
+
+
+
 # nistTrainIO :: IO (System, HistoryRepa)
 
 def nistTestIO():
