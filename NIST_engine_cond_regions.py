@@ -34,6 +34,9 @@ def tframe(f,tt):
 def fframe(f,ff):
     return qqff([tframe(f,tt) for tt in ffqq(ff)])
 
+def fid(ff):
+    return variablesVariableFud(fder(ff)[0])._rep
+
 def dflt(df,i):
     return zzdf(pathsTree([[(ss,ff) for (ss,ff) in ll if fid(ff) < i] for ll in treesPaths(dfzz(df))]))
 
