@@ -1,0 +1,15 @@
+>>>
+valency: 8
+breadth: 9
+offset: 0
+model: NIST_model38
+selected train size: 7500
+model cardinality: 308
+nullable fud cardinality: 683
+nullable fud derived cardinality: 127
+nullable fud underlying cardinality: 45
+ff label ent: 0.6309812112866986
+test size: 1000
+effective size: 986
+matches: 718
+<<< done 390.990s

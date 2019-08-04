@@ -1,0 +1,12 @@
+>>>
+model: NIST_model37
+train size: 7500
+model cardinality: 663
+nullable fud cardinality: 1039
+nullable fud derived cardinality: 127
+nullable fud underlying cardinality: 253
+ff label ent: 0.6564998305260028
+test size: 1000
+effective size: 999
+matches: 773
+<<< done 532.088s
