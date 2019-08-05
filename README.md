@@ -34,6 +34,10 @@ wget http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 
 The *practicable model induction* is described [here](https://greenlake.co.uk/pages/dataset_python_NIST_model#model2).
 
+```
+python3
+
+```
 ```py
 from NISTDev import *
 
